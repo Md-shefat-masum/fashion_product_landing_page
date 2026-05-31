@@ -1,0 +1,517 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Timberland Premium Cotton Shirt — hungry coder</title>
+  <meta name="description" content="Shop the Timberland Men's Premium Cotton Shirt in chocolate, sky blue, and white stripes. A premium editorial product landing page with a fast checkout form." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #111311;
+      --paper: #fbfbf7;
+      --panel: #f3f3ef;
+      --panel-deep: #e8e9e4;
+      --line: #d9ddd5;
+      --soft: #7d8279;
+      --orange: #ff5318;
+      --orange-dark: #e33d07;
+      --lime: #e8ff86;
+      --peach: #ffe2d6;
+      --sky: #d9f6ff;
+      --choco: #2a1515;
+      --white: #ffffff;
+      --shadow: 0 18px 50px rgba(17, 19, 17, 0.08);
+      --radius: 0px;
+      --mono: "Space Mono", monospace;
+      --display: "Archivo Black", sans-serif;
+      --body: "Syne", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--body);
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; }
+
+    .site-shell { width: min(1520px, 100%); margin: 0 auto; padding: 0 18px; }
+    .micro { font-family: var(--mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+    .display { font-family: var(--display); letter-spacing: -.09em; text-transform: uppercase; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+
+    /* Top bar */
+    .topbar {
+      position: sticky; top: 0; z-index: 30;
+      border-bottom: 1px solid var(--line);
+      background: rgba(251,251,247,.94);
+      backdrop-filter: blur(15px);
+    }
+    .topbar-inner { display: grid; grid-template-columns: 58px auto auto auto auto 58px 158px; min-height: 52px; }
+    .nav-cell {
+      border-right: 1px solid var(--line); display: flex; align-items: center; justify-content: center;
+      padding: 0 14px; font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: .06em;
+      transition: .25s ease;
+    }
+    .nav-cell:first-child { border-left: 1px solid var(--line); }
+    .nav-cell:hover { background: var(--lime); }
+    .circle-icon { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--line); background: #eff0ec; }
+    .circle-icon span, .circle-icon span::before, .circle-icon span::after { width: 12px; height: 1px; background: var(--ink); display: block; position: relative; }
+    .circle-icon span::before, .circle-icon span::after { content: ""; position: absolute; left: 0; }
+    .circle-icon span::before { top: -4px; }.circle-icon span::after { top: 4px; }
+    .nav-cta { background: var(--orange); color: white; border-right: 1px solid var(--orange); font-weight: 700; }
+    .nav-cta:hover { background: var(--orange-dark); }
+
+    /* Hero */
+    .hero { padding-top: 16px; }
+    .hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; min-height: 720px; border: 1px solid var(--line); background: var(--panel); overflow: hidden; }
+    .hero-copy { padding: clamp(22px, 4vw, 62px); position: relative; display: flex; flex-direction: column; justify-content: space-between; background: linear-gradient(145deg, var(--peach), #fff7f2 52%, var(--lime)); overflow: hidden; }
+    .hero-copy::after { content: "PREMIUM"; position: absolute; right: -9%; bottom: -8%; font-family: var(--display); font-size: clamp(7rem, 14vw, 17rem); color: rgba(255,255,255,.55); letter-spacing: -.12em; line-height: .72; transform: rotate(-6deg); }
+    .hero-kicker { display: inline-flex; align-items: center; gap: 8px; width: fit-content; padding: 8px 11px; border: 1px dashed rgba(17,19,17,.45); background: rgba(255,255,255,.4); }
+    .hero-kicker i { width: 8px; height: 8px; background: var(--orange); display: block; }
+    .hero-title { margin: 28px 0 0; font-size: clamp(4.8rem, 10vw, 10.8rem); line-height: .77; max-width: 770px; position: relative; z-index: 2; }
+    .hero-title .accent { color: var(--orange); display: block; }
+    .hero-subline { margin: 28px 0 0; width: min(610px, 100%); font-family: var(--mono); font-size: 11px; line-height: 1.8; text-transform: uppercase; letter-spacing: .05em; position: relative; z-index: 2; }
+    .hero-cta-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; position: relative; z-index: 3; margin-top: 28px; }
+    .btn { min-height: 48px; padding: 0 18px; border: 1px solid var(--ink); background: transparent; color: var(--ink); font-family: var(--mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; display: inline-flex; align-items: center; justify-content: center; gap: 10px; transition: .22s ease; }
+    .btn:hover { transform: translateY(-3px); box-shadow: 5px 5px 0 var(--ink); }
+    .btn-primary { background: var(--orange); color: #fff; border-color: var(--orange); }
+    .btn-dark { background: var(--ink); color: #fff; }
+    .hero-facts { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(17,19,17,.25); position: relative; z-index: 2; margin-top: 34px; }
+    .hero-fact { padding: 16px 10px 0 0; border-right: 1px solid rgba(17,19,17,.25); min-height: 70px; }
+    .hero-fact:not(:first-child) { padding-left: 16px; }
+    .hero-fact:last-child { border-right: 0; }
+    .hero-fact strong { display: block; font-size: 13px; text-transform: uppercase; }
+    .hero-fact span { display: block; color: #5a5e57; margin-top: 5px; }
+
+    .hero-media { position: relative; overflow: hidden; background: #e0e2dd; display: grid; place-items: center; }
+    .hero-media::before, .hero-media::after { content:""; position:absolute; border:1px solid rgba(17,19,17,.18); pointer-events:none; }
+    .hero-media::before { inset: 19px; }.hero-media::after { inset: 34px; border-style: dashed; }
+    .hero-product-img { width: 100%; height: 100%; object-fit: cover; transition: .45s ease; }
+    .hero-media:hover .hero-product-img { transform: scale(1.035); }
+    .hero-media-label { position: absolute; left: 22px; top: 22px; padding: 8px 10px; background: var(--lime); border: 1px solid var(--ink); }
+    .hero-price { position: absolute; right: 22px; bottom: 22px; display:flex; flex-direction:column; align-items:flex-end; gap:4px; padding: 14px 16px; background: rgba(255,255,255,.88); border: 1px solid var(--ink); box-shadow: 7px 7px 0 rgba(17,19,17,.16); }
+    .hero-price strong { font-size: 30px; letter-spacing: -.06em; }
+
+    /* Rail */
+    .rail { display: grid; grid-template-columns: 46px 42px auto 1fr 46px; align-items: stretch; margin: 52px 0 16px; min-height: 42px; }
+    .rail > * { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: center; }
+    .rail .rail-round { border-radius: 999px; background: #eef0ec; }
+    .rail-thumb { background: var(--lime); border-left: 1px solid var(--line); border-right: 1px solid var(--line); font-size: 18px; }
+    .rail-label { padding: 0 16px; min-width: 190px; font-family: var(--mono); text-transform: uppercase; letter-spacing: .06em; font-size: 10px; }
+    .rail-line { border-top: 1px dashed #f1a58b !important; border-bottom: 1px dashed #f1a58b !important; }
+
+    /* Product section */
+    .product-zone { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr); border: 1px solid var(--line); min-height: 650px; }
+    .product-gallery { padding: 18px; border-right: 1px solid var(--line); background: #f7f7f4; }
+    .gallery-main { aspect-ratio: 1 / 1; overflow: hidden; background: #e4e6e1; position: relative; }
+    .gallery-main img { width: 100%; height: 100%; object-fit: cover; transition: opacity .2s ease, transform .5s ease; }
+    .gallery-main:hover img { transform: scale(1.04); }
+    .gallery-note { position: absolute; left: 13px; bottom: 13px; background: #fff; border: 1px solid var(--ink); padding: 7px 9px; }
+    .thumb-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px; }
+    .thumb { padding: 0; border: 1px solid var(--line); background: #e5e6e1; transition:.2s ease; }
+    .thumb img { aspect-ratio: 1; width:100%; object-fit:cover; }
+    .thumb.active { border-color: var(--orange); box-shadow: inset 0 0 0 2px var(--orange); transform: translateY(-3px); }
+
+    .product-panel { padding: clamp(22px, 3.2vw, 52px); background: white; display:flex; flex-direction:column; }
+    .panel-eyebrow { display:flex; justify-content:space-between; gap:14px; align-items:center; }
+    .tag { display:inline-flex; padding: 7px 9px; border:1px solid var(--ink); font-family:var(--mono); font-size:10px; letter-spacing:.04em; text-transform:uppercase; }
+    .tag-stock { background: var(--lime); }
+    .product-title { margin: 22px 0 14px; font-size: clamp(2.4rem, 4vw, 5.8rem); line-height: .86; }
+    .product-text { font-size: 15px; line-height: 1.7; color:#51574f; max-width: 690px; }
+    .price-row { display:flex; align-items:end; gap:13px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding: 17px 0; margin:18px 0 0; }
+    .price-row strong { font-size: 34px; letter-spacing:-.06em; }
+    .price-row span { font-family:var(--mono); font-size:10px; text-transform:uppercase; color:#70766e; padding-bottom: 6px; }
+    .choice-block { padding-top: 19px; }
+    .choice-label { display:block; font-family: var(--mono); text-transform: uppercase; letter-spacing: .05em; font-size: 10px; margin-bottom: 9px; }
+    .swatches, .sizes { display:flex; gap:9px; flex-wrap:wrap; }
+    .swatch, .size-option { border: 1px solid var(--line); background:#fff; transition:.2s ease; position:relative; }
+    .swatch { width:34px; height:34px; }
+    .swatch::after { content:""; position:absolute; inset:5px; background:var(--swatch); border:1px solid rgba(17,19,17,.14); }
+    .swatch.active, .size-option.active { border-color: var(--orange); box-shadow: 0 0 0 2px rgba(255,83,24,.2); }
+    .size-option { min-width:44px; min-height:38px; padding:0 12px; font-family:var(--mono); font-size:12px; }
+    .mini-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:8px; margin-top:20px; }
+    .mini-stat { border:1px solid var(--line); padding:10px; min-height:62px; }
+    .mini-stat strong { display:block; margin-top:6px; font-size:11px; text-transform:uppercase; }
+    .product-actions { display:grid; grid-template-columns: 132px 1fr; gap:10px; margin-top:auto; padding-top:24px; }
+    .qty-control { display:grid; grid-template-columns:38px 1fr 38px; border:1px solid var(--ink); min-height:48px; }
+    .qty-control button { border:0; background:#fff; font-size:18px; }
+    .qty-control input { width:100%; border:0; text-align:center; background:#fff; font-family:var(--mono); }
+
+    /* Story */
+    .story-grid { display:grid; grid-template-columns: .8fr 1.2fr; border:1px solid var(--line); min-height:430px; overflow:hidden; background:#fff; }
+    .story-copy { padding: clamp(26px, 4vw, 60px); position:relative; overflow:hidden; background:var(--lime); }
+    .story-copy::after { content:"100%"; position:absolute; right:-20px; bottom:-24px; font-family:var(--display); font-size:150px; letter-spacing:-.15em; color:rgba(255,255,255,.48); line-height:.75; }
+    .story-copy h2 { margin:14px 0; font-size:clamp(3rem,7vw,7rem); line-height:.78; }
+    .story-copy p { max-width:560px; font-family:var(--mono); font-size:11px; line-height:1.8; text-transform:uppercase; }
+    .story-panel { display:grid; grid-template-columns:repeat(2,1fr); }
+    .feature { border-left:1px solid var(--line); border-bottom:1px solid var(--line); padding:22px; min-height:150px; background:#fafaf7; }
+    .feature:nth-child(2) { background:var(--peach); }
+    .feature:nth-child(3) { background:#f4f4ef; }
+    .feature:nth-child(4) { background:var(--sky); }
+    .feature-no { font-family:var(--display); font-size:34px; color:var(--orange); letter-spacing:-.1em; }
+    .feature h3 { margin:13px 0 8px; font-size:18px; text-transform:uppercase; }
+    .feature p { margin:0; color:#656b63; font-size:13px; line-height:1.55; }
+
+    /* Specs */
+    .spec-zone { display:grid; grid-template-columns: 1.2fr .8fr; border:1px solid var(--line); background:white; }
+    .spec-main { padding:clamp(22px, 4vw, 50px); border-right:1px solid var(--line); }
+    .spec-main h2, .size-panel h2, .checkout-heading h2 { font-size:clamp(3rem,7vw,8rem); line-height:.76; margin:0; }
+    .spec-list { display:grid; grid-template-columns:repeat(2,1fr); margin-top:30px; border-top:1px solid var(--line); }
+    .spec-item { display:grid; grid-template-columns:130px 1fr; gap:12px; border-bottom:1px solid var(--line); padding:13px 0; font-size:13px; }
+    .spec-item:nth-child(odd) { padding-right:16px; border-right:1px solid var(--line); }
+    .spec-item:nth-child(even) { padding-left:16px; }
+    .spec-key { font-family:var(--mono); text-transform:uppercase; font-size:10px; color:#737870; }
+    .size-panel { padding:clamp(22px,3vw,42px); background:var(--peach); }
+    .size-table { width:100%; border-collapse:collapse; margin-top:24px; background:#fff; }
+    .size-table th,.size-table td { border:1px solid var(--line); padding:11px 8px; text-align:center; font-family:var(--mono); font-size:10px; }
+    .size-table th { background:#f6f6f2; text-transform:uppercase; }
+    .call-box { margin-top:20px; border:1px solid var(--ink); background:var(--ink); color:#fff; padding:16px; }
+    .call-box a { display:block; color:var(--lime); margin-top:8px; font-family:var(--mono); font-size:20px; }
+
+    /* Checkout */
+    .checkout-zone { border:1px solid var(--line); background:#fff; display:grid; grid-template-columns:.82fr 1.18fr; }
+    .checkout-heading { padding:clamp(24px,4vw,56px); background:var(--peach); position:relative; overflow:hidden; }
+    .checkout-heading::after { content:"ORDER"; position:absolute; bottom:-28px; left:-12px; font-family:var(--display); font-size:150px; line-height:.72; color:rgba(255,255,255,.62); letter-spacing:-.14em; }
+    .checkout-heading > * { position:relative; z-index:2; }
+    .checkout-heading p { font-family:var(--mono); font-size:11px; text-transform:uppercase; line-height:1.8; max-width:460px; }
+    .secure-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:25px; }
+    .secure-row span { border:1px solid rgba(17,19,17,.25); background:rgba(255,255,255,.45); padding:8px 10px; }
+    .checkout-content { padding:clamp(22px,3.5vw,52px); }
+    .order-summary { display:grid; grid-template-columns:72px 1fr auto; gap:14px; align-items:center; border-bottom:1px solid var(--line); padding-bottom:16px; margin-bottom:18px; }
+    .order-summary img { width:72px; height:72px; object-fit:cover; border:1px solid var(--line); }
+    .order-summary strong { display:block; font-size:14px; text-transform:uppercase; }
+    .summary-price { font-size:20px; font-weight:800; letter-spacing:-.05em; }
+    .form-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+    .field { display:flex; flex-direction:column; gap:7px; }
+    .field-full { grid-column:1 / -1; }
+    .field label { font-family:var(--mono); font-size:10px; letter-spacing:.05em; text-transform:uppercase; }
+    .field input,.field select,.field textarea { width:100%; border:1px solid var(--line); background:#fafaf7; padding:13px 12px; min-height:46px; outline:0; transition:.2s ease; }
+    .field textarea { min-height:90px; resize:vertical; }
+    .field input:focus,.field select:focus,.field textarea:focus { border-color:var(--orange); box-shadow:0 0 0 3px rgba(255,83,24,.12); }
+    .delivery-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:17px; }
+    .delivery { border:1px solid var(--line); padding:13px; display:flex; gap:10px; align-items:center; background:#fafaf7; }
+    .delivery input { accent-color:var(--orange); }
+    .total-box { display:grid; gap:8px; margin-top:18px; padding-top:16px; border-top:1px solid var(--line); }
+    .total-line { display:flex; justify-content:space-between; gap:12px; font-family:var(--mono); font-size:11px; text-transform:uppercase; }
+    .total-line.final { font-family:var(--body); font-size:24px; font-weight:800; letter-spacing:-.06em; padding-top:8px; }
+    .checkout-submit { width:100%; margin-top:18px; min-height:54px; }
+
+    /* Footer */
+    footer { margin:18px 0 20px; border:1px solid var(--line); display:grid; grid-template-columns:1fr auto; gap:20px; padding:18px; align-items:center; background:white; }
+    .footer-logo { font-family:var(--display); font-size:28px; letter-spacing:-.1em; }
+    .footer-logo span { color:var(--orange); }
+    .footer-links { display:flex; flex-wrap:wrap; gap:16px; font-family:var(--mono); font-size:10px; text-transform:uppercase; }
+
+    .toast { position:fixed; right:18px; bottom:18px; z-index:50; min-width:260px; max-width:360px; padding:15px; background:var(--ink); color:#fff; border-left:5px solid var(--lime); box-shadow:var(--shadow); transform:translateY(130%); opacity:0; transition:.32s ease; }
+    .toast.show { transform:translateY(0); opacity:1; }
+    .toast strong { display:block; margin-bottom:5px; text-transform:uppercase; }
+
+    @media (max-width: 1040px) {
+      .topbar-inner { grid-template-columns:52px auto auto 52px 136px; }
+      .topbar-inner .hide-tablet { display:none; }
+      .hero-grid { grid-template-columns:1fr; }
+      .hero-copy { min-height:560px; }
+      .hero-media { min-height:620px; }
+      .product-zone, .spec-zone, .checkout-zone { grid-template-columns:1fr; }
+      .product-gallery, .spec-main { border-right:0; border-bottom:1px solid var(--line); }
+      .story-grid { grid-template-columns:1fr; }
+    }
+    @media (max-width: 720px) {
+      .site-shell { padding:0 10px; }
+      .topbar-inner { grid-template-columns:48px 1fr 48px 118px; }
+      .topbar-inner .hide-mobile { display:none; }
+      .nav-cell { padding:0 8px; font-size:8px; }
+      .hero { padding-top:10px; }
+      .hero-copy { min-height:500px; padding:22px; }
+      .hero-title { font-size:clamp(4.2rem, 22vw, 7.6rem); }
+      .hero-media { min-height:390px; }
+      .hero-price { right:13px; bottom:13px; }
+      .rail { grid-template-columns:42px 38px auto 1fr 42px; margin-top:36px; }
+      .rail-label { min-width:130px; padding:0 10px; font-size:8px; }
+      .product-gallery { padding:10px; }
+      .product-panel { padding:22px; }
+      .product-title { font-size:3.3rem; }
+      .mini-grid { grid-template-columns:1fr; }
+      .product-actions { grid-template-columns:1fr; }
+      .story-copy { min-height:330px; }
+      .story-panel { grid-template-columns:1fr; }
+      .feature { border-left:0; }
+      .spec-list { grid-template-columns:1fr; }
+      .spec-item:nth-child(odd),.spec-item:nth-child(even) { padding:12px 0; border-right:0; }
+      .form-grid { grid-template-columns:1fr; }
+      .delivery-grid { grid-template-columns:1fr; }
+      footer { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="site-shell topbar-inner">
+      <a class="nav-cell" href="#top" aria-label="Menu"><span class="circle-icon"><span></span></span></a>
+      <a class="nav-cell" href="#product">Premium Shirt</a>
+      <a class="nav-cell hide-mobile" href="#features">Material & Fit</a>
+      <a class="nav-cell hide-tablet" href="#specs">Specifications</a>
+      <a class="nav-cell hide-tablet" href="#size-guide">Size Guide</a>
+      <a class="nav-cell" href="#checkout" aria-label="Go to checkout">→</a>
+      <a class="nav-cell nav-cta" href="#checkout">Order Now</a>
+    </div>
+  </header>
+
+  <main id="top" class="site-shell">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div>
+            <span class="hero-kicker micro"><i></i>Timberland / Field Edition 01</span>
+            <h1 class="hero-title display"><span>Premium</span><span class="accent">Cotton</span><span>Shirt</span></h1>
+            <p class="hero-subline">A refined long-sleeve button-down engineered for everyday polish. Breathable 100% cotton, a classic structured collar, and a rich chocolate finish made for smart-casual rotation.</p>
+            <div class="hero-cta-row">
+              <a href="#checkout" class="btn btn-primary">Buy It Now <span>→</span></a>
+              <a href="#product" class="btn">Explore Details <span>↓</span></a>
+            </div>
+          </div>
+          <div class="hero-facts">
+            <div class="hero-fact"><strong>100% Cotton</strong><span class="micro">Breathable comfort</span></div>
+            <div class="hero-fact"><strong>Regular Fit</strong><span class="micro">Everyday structure</span></div>
+            <div class="hero-fact"><strong>৳2,650</strong><span class="micro">Stock available</span></div>
+          </div>
+        </div>
+        <div class="hero-media">
+          <span class="hero-media-label micro">Chocolate / Best Seller</span>
+          <img class="hero-product-img" id="heroImage" src="https://app-area.hungry coder.com.bd/productImages/17502450360O6Ec.webp" alt="Timberland Premium Chocolate Cotton Shirt" />
+          <div class="hero-price"><span class="micro">Current price</span><strong>৳2,650</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="rail" aria-hidden="true">
+      <div class="rail-round micro">☰</div><div class="rail-thumb">▣</div><div class="rail-label">Featured product</div><div class="rail-line"></div><div class="rail-round">→</div>
+    </div>
+
+    <section id="product" class="product-zone">
+      <div class="product-gallery">
+        <div class="gallery-main">
+          <img id="mainGalleryImage" src="https://app-area.hungry coder.com.bd/productImages/17502450360O6Ec.webp" alt="Selected Timberland shirt color" />
+          <span class="gallery-note micro" id="galleryNote">Chocolate / 01</span>
+        </div>
+        <div class="thumb-grid">
+          <button type="button" class="thumb active" data-color="Chocolate" data-image="https://app-area.hungry coder.com.bd/productImages/17502450360O6Ec.webp" aria-label="Select chocolate shirt image"><img src="https://app-area.hungry coder.com.bd/productImages/17502450360O6Ec.webp" alt="Chocolate shirt" /></button>
+          <button type="button" class="thumb" data-color="Sky Blue" data-image="https://app-area.hungry coder.com.bd/productImages/1750245036PBS5Q.webp" aria-label="Select sky blue shirt image"><img src="https://app-area.hungry coder.com.bd/productImages/1750245036PBS5Q.webp" alt="Sky blue shirt" /></button>
+          <button type="button" class="thumb" data-color="White Stripes" data-image="https://app-area.hungry coder.com.bd/productImages/1750245036uoqmC.webp" aria-label="Select white stripes shirt image"><img src="https://app-area.hungry coder.com.bd/productImages/1750245036uoqmC.webp" alt="White stripe shirt" /></button>
+        </div>
+      </div>
+      <div class="product-panel">
+        <div class="panel-eyebrow">
+          <span class="tag tag-stock">● Stock In</span>
+          <span class="micro">Men's collection / ID 1404</span>
+        </div>
+        <h2 class="product-title display">Timberland Men's Premium Cotton Shirt</h2>
+        <p class="product-text">Discover a premium long-sleeve button-down shirt crafted from 100% breathable cotton. It features a button-down collar, full front closure, adjustable buttoned cuffs, and a single chest pocket with signature logo detail.</p>
+        <div class="price-row"><strong>৳2,650</strong><span>Premium regular fit / tax inclusive</span></div>
+
+        <div class="choice-block">
+          <span class="choice-label">Choose color: <b id="selectedColorText">Chocolate</b></span>
+          <div class="swatches">
+            <button type="button" class="swatch active" style="--swatch:#2a1515" data-color="Chocolate" data-image="https://app-area.hungry coder.com.bd/productImages/17502450360O6Ec.webp" aria-label="Chocolate"></button>
+            <button type="button" class="swatch" style="--swatch:#87ceeb" data-color="Sky Blue" data-image="https://app-area.hungry coder.com.bd/productImages/1750245036PBS5Q.webp" aria-label="Sky blue"></button>
+            <button type="button" class="swatch" style="--swatch:#fcfcfc" data-color="White Stripes" data-image="https://app-area.hungry coder.com.bd/productImages/1750245036uoqmC.webp" aria-label="White stripes"></button>
+          </div>
+        </div>
+
+        <div class="choice-block">
+          <span class="choice-label">Choose size</span>
+          <div class="sizes"><button type="button" class="size-option active" aria-pressed="true">S</button></div>
+        </div>
+
+        <div class="mini-grid">
+          <div class="mini-stat"><span class="micro">Material</span><strong>100% Cotton</strong></div>
+          <div class="mini-stat"><span class="micro">Collar</span><strong>Button-down</strong></div>
+          <div class="mini-stat"><span class="micro">Fit</span><strong>Regular fit</strong></div>
+        </div>
+
+        <div class="product-actions">
+          <div class="qty-control">
+            <button type="button" class="qty-minus" aria-label="Decrease quantity">−</button>
+            <input class="qty-input" type="number" min="1" value="1" aria-label="Product quantity" />
+            <button type="button" class="qty-plus" aria-label="Increase quantity">+</button>
+          </div>
+          <button class="btn btn-primary go-checkout" type="button">Proceed to Checkout <span>→</span></button>
+        </div>
+      </div>
+    </section>
+
+    <div class="rail" aria-hidden="true">
+      <div class="rail-round micro">☰</div><div class="rail-thumb">◌</div><div class="rail-label">The cotton code</div><div class="rail-line"></div><div class="rail-round">→</div>
+    </div>
+
+    <section id="features" class="story-grid">
+      <div class="story-copy">
+        <span class="micro">Fabric story / breathable structure</span>
+        <h2 class="display">Pure Cotton Energy</h2>
+        <p>Classic Timberland restraint meets an editorial everyday uniform. Wear it as a standalone statement or layer it for a smarter finish.</p>
+      </div>
+      <div class="story-panel">
+        <article class="feature"><span class="feature-no">01</span><h3>Breathable build</h3><p>100% cotton composition supports all-day comfort across work and casual settings.</p></article>
+        <article class="feature"><span class="feature-no">02</span><h3>Timeless collar</h3><p>The button-down collar keeps the silhouette crisp without feeling overly formal.</p></article>
+        <article class="feature"><span class="feature-no">03</span><h3>Signature detail</h3><p>A single chest pocket and subtle Timberland logo embroidery complete the look.</p></article>
+        <article class="feature"><span class="feature-no">04</span><h3>Versatile palette</h3><p>Choose chocolate, sky blue, or white stripes to match your daily rotation.</p></article>
+      </div>
+    </section>
+
+    <div class="rail" aria-hidden="true">
+      <div class="rail-round micro">☰</div><div class="rail-thumb">⌘</div><div class="rail-label">Technical details</div><div class="rail-line"></div><div class="rail-round">→</div>
+    </div>
+
+    <section id="specs" class="spec-zone">
+      <div class="spec-main">
+        <span class="micro">Premium shirt / technical file</span>
+        <h2 class="display">Specifications</h2>
+        <div class="spec-list">
+          <div class="spec-item"><span class="spec-key">Brand</span><strong>Timberland</strong></div>
+          <div class="spec-item"><span class="spec-key">Gender</span><strong>Men's</strong></div>
+          <div class="spec-item"><span class="spec-key">Style</span><strong>Premium long-sleeve button-down shirt</strong></div>
+          <div class="spec-item"><span class="spec-key">Material</span><strong>100% cotton</strong></div>
+          <div class="spec-item"><span class="spec-key">Collar</span><strong>Button-down collar</strong></div>
+          <div class="spec-item"><span class="spec-key">Closure</span><strong>Full front button closure</strong></div>
+          <div class="spec-item"><span class="spec-key">Sleeve</span><strong>Long sleeves with buttoned cuffs</strong></div>
+          <div class="spec-item"><span class="spec-key">Pocket</span><strong>Single chest pocket with logo detail</strong></div>
+          <div class="spec-item"><span class="spec-key">Fit</span><strong>Regular fit</strong></div>
+          <div class="spec-item"><span class="spec-key">Colors</span><strong>Chocolate, sky blue, white stripes</strong></div>
+        </div>
+      </div>
+      <aside id="size-guide" class="size-panel">
+        <span class="micro">Size guide / measurement in inches</span>
+        <h2 class="display">Fit File</h2>
+        <table class="size-table">
+          <thead><tr><th>Size</th><th>Chest</th><th>Length</th><th>Shoulder</th><th>Sleeve</th></tr></thead>
+          <tbody><tr><td>S</td><td>40</td><td>28</td><td>17</td><td>24</td></tr></tbody>
+        </table>
+        <div class="call-box"><span class="micro">Need help before ordering?</span><a href="tel:+8801322906988">01322-906988</a></div>
+      </aside>
+    </section>
+
+    <div class="rail" aria-hidden="true">
+      <div class="rail-round micro">☰</div><div class="rail-thumb">✓</div><div class="rail-label">Fast checkout</div><div class="rail-line"></div><div class="rail-round">→</div>
+    </div>
+
+    <section id="checkout" class="checkout-zone">
+      <div class="checkout-heading">
+        <span class="micro">Checkout / cash on delivery</span>
+        <h2 class="display">Order Now</h2>
+        <p>Complete your delivery information. The selected shirt variant and quantity will be reflected automatically in your order summary.</p>
+        <div class="secure-row micro"><span>✓ Secure Form</span><span>✓ COD Available</span><span>✓ Stock In</span></div>
+      </div>
+      <div class="checkout-content">
+        <div class="order-summary">
+          <img id="checkoutImage" src="https://app-area.hungry coder.com.bd/productImages/17502450360O6Ec.webp" alt="Selected product image" />
+          <div><strong>Timberland Premium Cotton Shirt</strong><span class="micro" id="checkoutVariant">Chocolate / Size S / Qty 1</span></div>
+          <div class="summary-price" id="summaryPrice">৳2,650</div>
+        </div>
+
+        <form id="checkoutForm">
+          <div class="form-grid">
+            <div class="field"><label for="fullName">Full name *</label><input id="fullName" name="fullName" required placeholder="Your name" /></div>
+            <div class="field"><label for="phone">Phone number *</label><input id="phone" name="phone" type="tel" required placeholder="01XXXXXXXXX" pattern="01[0-9]{9}" /></div>
+            <div class="field"><label for="district">District *</label><input id="district" name="district" required placeholder="District" /></div>
+            <div class="field"><label for="upazila">Area / Upazila *</label><input id="upazila" name="upazila" required placeholder="Area or Upazila" /></div>
+            <div class="field field-full"><label for="address">Full delivery address *</label><textarea id="address" name="address" required placeholder="House, road, village, landmark"></textarea></div>
+            <div class="field"><label for="colorSelect">Selected color</label><select id="colorSelect" name="color"><option>Chocolate</option><option>Sky Blue</option><option>White Stripes</option></select></div>
+            <div class="field"><label for="sizeSelect">Selected size</label><select id="sizeSelect" name="size"><option>S</option></select></div>
+          </div>
+
+          <div class="delivery-grid">
+            <label class="delivery"><input type="radio" name="delivery" value="80" checked /><span><b>Inside Dhaka</b><br><span class="micro">Delivery ৳80</span></span></label>
+            <label class="delivery"><input type="radio" name="delivery" value="130" /><span><b>Outside Dhaka</b><br><span class="micro">Delivery ৳130</span></span></label>
+          </div>
+
+          <div class="total-box">
+            <div class="total-line"><span>Product subtotal</span><strong id="subtotal">৳2,650</strong></div>
+            <div class="total-line"><span>Delivery charge</span><strong id="deliveryCost">৳80</strong></div>
+            <div class="total-line final"><span>Total payable</span><strong id="grandTotal">৳2,730</strong></div>
+          </div>
+          <button class="btn btn-dark checkout-submit" type="submit">Confirm Cash on Delivery Order <span>→</span></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-shell">
+    <div><div class="footer-logo"><span>hungry coder</span> / TIMBERLAND EDIT</div><span class="micro">Premium men's collection · Journey with luxury</span></div>
+    <div class="footer-links"><a href="#top">Back to top</a><a href="tel:+8801322906988">Call for order</a><a href="#specs">Product details</a></div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"><strong>Order form checked</strong><span>Your demo checkout is ready. Connect this form to your backend endpoint for live order submission.</span></div>
+
+  <script>
+    const price = 2650;
+    const state = { color: 'Chocolate', image: 'https://app-area.hungry coder.com.bd/productImages/17502450360O6Ec.webp', qty: 1, delivery: 80 };
+    const formatBDT = value => `৳${Number(value).toLocaleString('en-US')}`;
+
+    const mainGalleryImage = document.getElementById('mainGalleryImage');
+    const heroImage = document.getElementById('heroImage');
+    const checkoutImage = document.getElementById('checkoutImage');
+    const colorSelect = document.getElementById('colorSelect');
+    const qtyInputs = [...document.querySelectorAll('.qty-input')];
+
+    function setColor(color, image) {
+      state.color = color;
+      state.image = image;
+      [mainGalleryImage, heroImage, checkoutImage].forEach(img => {
+        img.style.opacity = '.25';
+        setTimeout(() => { img.src = image; img.style.opacity = '1'; }, 120);
+      });
+      document.getElementById('selectedColorText').textContent = color;
+      document.getElementById('galleryNote').textContent = `${color} / ${color === 'Chocolate' ? '01' : color === 'Sky Blue' ? '02' : '03'}`;
+      colorSelect.value = color;
+      document.querySelectorAll('.thumb, .swatch').forEach(el => el.classList.toggle('active', el.dataset.color === color));
+      updateOrder();
+    }
+
+    function setQty(value) {
+      state.qty = Math.max(1, Number(value) || 1);
+      qtyInputs.forEach(input => input.value = state.qty);
+      updateOrder();
+    }
+
+    function updateOrder() {
+      const subtotal = price * state.qty;
+      const total = subtotal + state.delivery;
+      document.getElementById('checkoutVariant').textContent = `${state.color} / Size S / Qty ${state.qty}`;
+      document.getElementById('summaryPrice').textContent = formatBDT(subtotal);
+      document.getElementById('subtotal').textContent = formatBDT(subtotal);
+      document.getElementById('deliveryCost').textContent = formatBDT(state.delivery);
+      document.getElementById('grandTotal').textContent = formatBDT(total);
+    }
+
+    document.querySelectorAll('.thumb, .swatch').forEach(el => el.addEventListener('click', () => setColor(el.dataset.color, el.dataset.image)));
+    document.querySelector('.qty-plus').addEventListener('click', () => setQty(state.qty + 1));
+    document.querySelector('.qty-minus').addEventListener('click', () => setQty(state.qty - 1));
+    qtyInputs.forEach(input => input.addEventListener('change', e => setQty(e.target.value)));
+    colorSelect.addEventListener('change', e => {
+      const match = [...document.querySelectorAll('.swatch')].find(el => el.dataset.color === e.target.value);
+      if (match) setColor(match.dataset.color, match.dataset.image);
+    });
+    document.querySelectorAll('input[name="delivery"]').forEach(radio => radio.addEventListener('change', e => { state.delivery = Number(e.target.value); updateOrder(); }));
+    document.querySelector('.go-checkout').addEventListener('click', () => document.getElementById('checkout').scrollIntoView({ behavior: 'smooth' }));
+    document.getElementById('checkoutForm').addEventListener('submit', e => {
+      e.preventDefault();
+      if (!e.currentTarget.reportValidity()) return;
+      const toast = document.getElementById('toast');
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 5200);
+    });
+    updateOrder();
+  </script>
+</body>
+</html>
